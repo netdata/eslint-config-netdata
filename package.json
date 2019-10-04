@@ -1,0 +1,46 @@
+{
+  "name": "eslint-config-netdata",
+  "version": "0.0.1",
+  "description": "netdata shared eslint config",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netdata/eslint-config-netdata.git"
+  },
+  "keywords": [
+    "eslint",
+    "lint-config"
+  ],
+  "author": "Netdata team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netdata/eslint-config-netdata/issues"
+  },
+  "homepage": "https://github.com/netdata/eslint-config-netdata#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.1",
+    "eslint-plugin-react-hooks": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.11",
+    "husky": "^3.0.8",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "react": "^16.10.2",
+    "typescript": "^3.6.3"
+  }
+}
