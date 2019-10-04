@@ -1,7 +1,7 @@
 const { CLIEngine } = require("eslint")
 
 const cli = new CLIEngine({ ignore: false })
-
+/*eslint-disable */
 const exportNamedSnippet = `export const DummyExport = 123
 `
 const exportDefaultSnippet = `export default 123
@@ -15,6 +15,11 @@ const strBadLength = `/* eslint-disable no-console */
 const p = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 console.log(p)
 `
+
+const noUnderscore = `/* eslint-disable no-console */
+const _underscored = 123
+console.log(_underscored)`
+/* eslint-enable */
 
 describe("ESLint should handle common rules : ", () => {
   it(" -> prefere no default export", () => {
@@ -37,6 +42,15 @@ describe("ESLint should handle common rules : ", () => {
     expect(
       results[0].messages.some(
         ({ message }) => message === "This line has a length of 172. Maximum allowed is 100."
+      )
+    ).toBeTruthy()
+  })
+
+  it(" -> throw error on underscored variable", () => {
+    const { results } = cli.executeOnText(noUnderscore)
+    expect(
+      results[0].messages.some(
+        ({ message }) => message === "Unexpected dangling '_' in '_underscored'."
       )
     ).toBeTruthy()
   })
