@@ -10,4 +10,11 @@ describe("ESLint should handle react rules : ", () => {
     ])
     expect(results[0].messages).toHaveLength(0)
   })
+
+  it(" -> parse tsx with spread props", () => {
+    const { results } = cli.executeOnFiles([
+      path.resolve(__dirname, "./__mock__/props-spread.mock.tsx"),
+    ])
+    expect(results[0].messages).toHaveLength(0)
+  })
 })
