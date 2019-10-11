@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-netdata",
+  "name": "@netdata/eslint-config-netdata",
   "version": "0.0.1",
   "description": "netdata shared eslint config",
   "main": ".eslintrc.js",
