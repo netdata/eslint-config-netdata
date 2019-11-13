@@ -1,12 +1,16 @@
 const { CLIEngine } = require("eslint")
 
-const cli = new CLIEngine({ ignore: false })
-
-const unusedVarSnippet = `const unused= "unused"
+const cli = new CLIEngine()
+const unusedVarSnippet = `const unused = "unused"
 const used = 1
 used + 1
 `
 const extraSemi = "1;"
+
+const optionalChaining = `/* eslint-disable no-console */
+const obj = { key: { keyTwo: 0 } }
+console.log(obj?.key?.subkey)
+`
 
 describe("ESLint should handle typescript rules : ", () => {
   it(" -> handles `no-unused-vars` rule", () => {
@@ -26,5 +30,9 @@ describe("ESLint should handle typescript rules : ", () => {
           message === "Expected an assignment or function call and instead saw an expression."
       )
     ).toBeTruthy()
+  })
+  it(" -> works on optional chaining", () => {
+    const { results } = cli.executeOnText(optionalChaining)
+    expect(results[0].messages.length).toBe(0)
   })
 })

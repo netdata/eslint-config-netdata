@@ -4,7 +4,6 @@ const path = require("path")
 const cli = new CLIEngine({ ignore: false })
 
 const emptySnippet = "// Test\n"
-
 describe("ESLint should: ", () => {
   it(" -> start with valid config", () => {
     const { results } = cli.executeOnText(emptySnippet)

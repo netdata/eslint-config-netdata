@@ -1,6 +1,8 @@
 const { CLIEngine } = require("eslint")
 
-const cli = new CLIEngine({ ignore: false })
+const cli = new CLIEngine({
+  ignore: false,
+})
 /*eslint-disable */
 const exportNamedSnippet = `export const DummyExport = 123
 `

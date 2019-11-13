@@ -10,6 +10,7 @@ module.exports = {
   plugins,
   env: {
     browser: true,
+    jest: true,
   },
   extends: ["airbnb", "plugin:prettier/recommended"],
   rules: {
