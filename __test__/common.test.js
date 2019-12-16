@@ -25,7 +25,7 @@ console.log(_underscored)`
 const eqeqeq = `/* eslint-disable no-console */
 const one = 1
 const isOne = one == 1
-console.log(_underscored)`
+console.log(isOne)`
 /* eslint-enable */
 
 describe("ESLint should handle common rules : ", () => {
