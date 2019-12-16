@@ -21,6 +21,11 @@ console.log(p)
 const noUnderscore = `/* eslint-disable no-console */
 const _underscored = 123
 console.log(_underscored)`
+
+const eqeqeq = `/* eslint-disable no-console */
+const one = 1
+const isOne = one == 1
+console.log(_underscored)`
 /* eslint-enable */
 
 describe("ESLint should handle common rules : ", () => {
@@ -54,6 +59,15 @@ describe("ESLint should handle common rules : ", () => {
       results[0].messages.some(
         ({ message }) => message === "Unexpected dangling '_' in '_underscored'."
       )
+    ).toBeTruthy()
+  })
+
+  it(" -> 'eqeqeq' strict equality rule", () => {
+    const { results } = cli.executeOnText(eqeqeq)
+    expect(
+      results[0].messages.some(({ message }) => {
+        return message === "Expected '===' and instead saw '=='."
+      })
     ).toBeTruthy()
   })
 })

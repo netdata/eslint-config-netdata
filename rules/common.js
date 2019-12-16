@@ -16,5 +16,6 @@ module.exports = {
   "prettier/prettier": "error",
   quotes: ["error", "double"],
   semi: ["error", "never"],
+  eqeqeq: ["error", "always"],
   "no-underscore-dangle": ["error", { allow: ["__REDUX_DEVTOOLS_EXTENSION__"] }],
 }
